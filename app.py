@@ -4,6 +4,14 @@ import streamlit.components.v1 as components
 # Title of the Streamlit app
 st.title("Interactive 3D Roof Model with Three.js")
 
+# Location input
+st.subheader("Select Location")
+lat = st.number_input("Enter Latitude", -90.0, 90.0, 0.0, format="%.6f")
+lon = st.number_input("Enter Longitude", -180.0, 180.0, 0.0, format="%.6f")
+
+# Show the location on a map
+st.map(data={"lat": [lat], "lon": [lon]}, zoom=10)
+
 # Sliders to control the size of the cube (representing the roof)
 width = st.slider("Select Roof Width", 1, 10, 2)
 height = st.slider("Select Roof Height", 1, 10, 2)
