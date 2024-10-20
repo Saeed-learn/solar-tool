@@ -40,7 +40,7 @@ html_code = f"""
 
         // Add a cube to represent the roof with dynamic dimensions
         const geometry = new THREE.BoxGeometry({width}, {height}, {depth});
-        const material = new THREE.MeshBasicMaterial({color: 0x00ff00});  // Color is hardcoded here
+        const material = new THREE.MeshBasicMaterial({{ color: 0x00ff00 }});  // Use double curly braces to escape
         const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
